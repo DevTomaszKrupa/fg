@@ -11,14 +11,7 @@ const useScanner = () => {
     return () => {
       document.removeEventListener("keydown", handleBarcodeScan);
     };
-  }, []);
-
-  useEffect(() => {
-    document.addEventListener("keydown", handleBarcodeScan);
-
-    return () => {
-      document.removeEventListener("keydown", handleBarcodeScan);
-    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleBarcodeScan = (event) => {
